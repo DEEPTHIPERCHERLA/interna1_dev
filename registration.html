@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    
+    <script>
+        function validateForm() {
+            var FirstName = document.forms["f1"]["fn"].value;
+            var LastName = document.forms["f1"]["ln"].value;
+            var EmailAdd = document.forms["f1"]["eid"].value;
+            var Address = document.forms["f1"]["add"].value;
+            var Password = document.forms["f1"]["pass"].value;
+            var Gender = document.forms["f1"]["gender"].value;
+            if (FirstName == "" || FirstName.length < 6) {
+                alert("Enter first name");
+                return false;
+            }
+            if (LastName == "") {
+                alert("Enter last name");
+                return false;
+            }
+            if (EmailAdd == "") {
+                alert("Enter email address");
+                return false;
+            }
+            if (Address == "") {
+                alert("Enter address");
+                return false;
+            }
+            if (Password == "") {
+                alert("Enter password");
+                return false;
+            }
+            if (Gender == "") {
+                alert("Select gender");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body class="bg-pink text-center">
+    <div class="container">
+        <h1 class="font-italic font-weight-bold text-brown">Registration Form</h1>
+        <form name="f1" action="order.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="firstName">First Name (min 6 chars):</label>
+                <input type="text" name="fn" class="form-control" id="firstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="ln" class="form-control" id="lastName">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address (e.g., deepthi@gmail.com):</label>
+                <input type="email" name="eid" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea rows="2" cols="20" name="add" class="form-control" id="address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="pass" class="form-control" id="password">
+            </div>
+            <div class="form-group">
+                <label>Gender:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="gender" value="male" class="form-check-input" id="male">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="gender" value="female" class="form-check-input" id="female">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
